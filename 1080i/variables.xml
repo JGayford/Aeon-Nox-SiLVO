@@ -442,7 +442,7 @@
 		<value condition="Control.HasFocus(403)">$LOCALIZE[31916]</value>
 		<value condition="Control.HasFocus(404)">$LOCALIZE[31944]</value>
 		<value condition="Control.HasFocus(405)">$LOCALIZE[31945]</value>
-        <value condition="Control.HasFocus(406)">$LOCALIZE[31962]</value>
+		<value condition="Control.HasFocus(406)">$LOCALIZE[31962]</value>
 		<value condition="Control.HasFocus(500)">$LOCALIZE[31988]</value>
 		<value condition="Control.HasFocus(501)">$LOCALIZE[31981]</value>
 		<value condition="Control.HasFocus(503)">$LOCALIZE[31983]</value>
@@ -476,12 +476,10 @@
 		<value condition="Skin.HasSetting(HomeMenuNavVar)">$LOCALIZE[31005]</value>
 		<value>$LOCALIZE[571]</value>
 	</variable>
-	<!--
-	<variable name="TopBarVar">
+	<!--<variable name="TopBarVar">
 		<value condition="Skin.HasSetting(hidetopbar)">Hide</value>
 		<value>Show</value>
-	</variable>
-	-->
+	</variable>-->
 	<variable name="SlimListSettingVar">
 		<value condition="Skin.HasSetting(Enable.SlimList)">$LOCALIZE[31095]</value>
 		<value>$LOCALIZE[571]</value>
@@ -865,7 +863,6 @@
 		<value condition="VideoPlayer.Content(livetv) + !IsEmpty(VideoPlayer.Cover)">$INFO[VideoPlayer.Cover]</value>
 		<value>$INFO[Player.Art(thumb)]</value>
 	</variable>
-
 	<variable name="BigListInfoVar">
 		<value condition="Container.Content(movies) | Container.Content(tvshows)">$INFO[ListItem.Genre]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,[COLOR=themecolor]$LOCALIZE[20416]: [/COLOR],]</value>
@@ -883,9 +880,7 @@
 		<value condition="Container.Content(movies) + IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.Tagline,[COLOR labelheader],[/COLOR] - ]$INFO[ListItem.Plot]</value>
 		<value>$INFO[ListItem.Plot]</value>
 	</variable>
-	<!-- 
-		DialogVideoInfo
-	-->
+	<!-- DialogVideoInfo -->
 	<variable name="VideoInfoDetailsLabelVar">
 		<value condition="ControlGroup(9001).HasFocus(50) | !Container(9001).HasPrevious">$LOCALIZE[206]$INFO[Container(50).NumItems, [COLOR grey3](,)[/COLOR]]</value>
 		<value condition="ControlGroup(9001).HasFocus(90011)">$LOCALIZE[31111]$INFO[Container(90011).NumItems, [COLOR grey3](,)[/COLOR]]</value>
@@ -895,9 +890,7 @@
 		<value condition="ControlGroup(9001).HasFocus(90015)">$LOCALIZE[31115]$INFO[Container(90015).NumItems, [COLOR grey3](,)[/COLOR]]</value>
 		<value condition="ControlGroup(9001).HasFocus(90016)">$LOCALIZE[33054]$INFO[Container(90016).NumItems, [COLOR grey3](,)[/COLOR]]</value>
 	</variable>
-	<!--
-		Extendend Info
-	-->
+	<!-- Extendend Info -->
 	<variable name="ExtendedInfo.FavLabelVar">
 		<value condition="!IsEmpty(Window.Property(movie.favorite))"></value>
 		<value></value>
@@ -967,6 +960,30 @@
 		<value condition="StringCompare(Skin.String(TriPanelLayout),Default)">Skin.SetString(TriPanelLayout,Alternate)</value>
 		<value condition="StringCompare(Skin.String(TriPanelLayout),Alternate)">Skin.SetString(TriPanelLayout,Default)</value>
 	</variable>
+	<variable name="FakeDiscArtOverlay">
+		<value condition="SubString(ListItem.Filename,3d) | SubString(ListItem.Filename,3dbd)">discart/3d.png</value>
+		<value condition="SubString(ListItem.Filename,hddvd)">discart/hddvd.png</value>
+		<value condition="SubString(ListItem.Filename,hdtv) | SubString(ListItem.Filename,hd tv)">discart/hdtv.png</value>
+		<value condition="SubString(ListItem.Filename,webdl) | SubString(ListItem.Filename,web-dl)">discart/webdl.png</value>
+		<value condition="SubString(ListItem.Filename,4k)">discart/4k.png</value>
+		<value>discart/$INFO[ListItem.VideoResolution]p.png</value>
+	</variable>
+	<variable name="FakeDischand">
+		<value condition="SubString(ListItem.Filename,3d) | SubString(ListItem.Filename,3dbd)">discart/3dhand.png</value>
+		<value condition="SubString(ListItem.Filename,hddvd)">discart/hddvdhand.png</value>
+		<value condition="SubString(ListItem.Filename,hdtv) | SubString(ListItem.Filename,hd tv)">discart/hdtvhand.png</value>
+		<value condition="SubString(ListItem.Filename,webdl) | SubString(ListItem.Filename,web-dl)">discart/webdlhand.png</value>
+		<value condition="SubString(ListItem.Filename,4k)">discart/4khand.png</value>
+		<value>discart/$INFO[ListItem.VideoResolution]phand.png</value>
+	</variable>
+	<variable name="FakeDischandcolor">
+		<value condition="SubString(ListItem.Filename,3d) | SubString(ListItem.Filename,3dbd)">discart/3dhandcolor.png</value>
+		<value condition="SubString(ListItem.Filename,hddvd)">discart/hddvdhandcolor.png</value>
+		<value condition="SubString(ListItem.Filename,hdtv) | SubString(ListItem.Filename,hd tv)">discart/hdtvhandcolor.png</value>
+		<value condition="SubString(ListItem.Filename,webdl) | SubString(ListItem.Filename,web-dl)">discart/webdlhandcolor.png</value>
+		<value condition="SubString(ListItem.Filename,4k)">discart/4khand.png</value>
+		<value>discart/$INFO[ListItem.VideoResolution]phandcolor.png</value>
+	</variable>
 	<variable name="LibraryStructureVar">
 		<value condition="Stringcompare(Skin.String(LibraryStructure),1)">$LOCALIZE[557]/$LOCALIZE[558]/</value>
 		<value condition="Stringcompare(Skin.String(LibraryStructure),2)">$LOCALIZE[557]/$LOCALIZE[562] - $LOCALIZE[558]/</value>
@@ -994,7 +1011,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),8)">plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window.Property(randomalbums)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),9)">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),10)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
-				<value condition="StringCompare(Container(9000).ListItem.Property(Widget),20)">plugin://script.extendedinfo?info=intheaters</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),20)">plugin://script.extendedinfo?info=intheaters</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),21)">plugin://script.extendedinfo?info=comingsoon</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),22)">plugin://script.extendedinfo?info=opening</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),23)">plugin://script.extendedinfo?info=boxoffice</value>
