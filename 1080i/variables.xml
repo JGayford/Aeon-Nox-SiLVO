@@ -984,6 +984,10 @@
 		<value condition="SubString(ListItem.Filename,4k)">discart/4khand.png</value>
 		<value>discart/$INFO[ListItem.VideoResolution]phandcolor.png</value>
 	</variable>
+	<variable name="BoxsetModFanartVar">
+		<value condition="!IsEmpty(ListItem.Art(extrafanart1))">$INFO[ListItem.Art(extrafanart1)]</value>
+		<value condition="IsEmpty(ListItem.Art(extrafanart1))">$INFO[ListItem.Art(fanart)]</value>
+	</variable>
 	<variable name="LibraryStructureVar">
 		<value condition="Stringcompare(Skin.String(LibraryStructure),1)">$LOCALIZE[557]/$LOCALIZE[558]/</value>
 		<value condition="Stringcompare(Skin.String(LibraryStructure),2)">$LOCALIZE[557]/$LOCALIZE[562] - $LOCALIZE[558]/</value>
