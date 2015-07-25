@@ -337,12 +337,23 @@
 		<value condition="StringCompare(Skin.String(Showcase.Delay),4)">Skin.SetString(Showcase.Delay,5)</value>
 		<value condition="StringCompare(Skin.String(Showcase.Delay),5)">Skin.SetString(Showcase.Delay,2)</value>
 	</variable>
+	<variable name="MyFlixModDelayOnClickVar">
+		<value condition="IsEmpty(Skin.String(MyFlix.Delay))">Skin.SetString(MyFlix.Delay,2)</value>
+		<value condition="StringCompare(Skin.String(MyFlix.Delay),2)">Skin.SetString(MyFlix.Delay,3)</value>
+		<value condition="StringCompare(Skin.String(MyFlix.Delay),3)">Skin.SetString(MyFlix.Delay,4)</value>
+		<value condition="StringCompare(Skin.String(MyFlix.Delay),4)">Skin.SetString(MyFlix.Delay,5)</value>
+		<value condition="StringCompare(Skin.String(MyFlix.Delay),5)">Skin.SetString(MyFlix.Delay,2)</value>
+	</variable>
 	<variable name="InfoPanelDelayLocalizeVar">
 		<value condition="!IsEmpty(Skin.String(InfoPanel.Delay))">$INFO[Skin.String(InfoPanel.Delay),, $LOCALIZE[31090]]</value>
 		<value>$LOCALIZE[351]</value>
 	</variable>
 	<variable name="ShowcaseDelayLocalizeVar">
 		<value condition="!IsEmpty(Skin.String(Showcase.Delay))">$INFO[Skin.String(Showcase.Delay),, $LOCALIZE[31090]]</value>
+		<value>$LOCALIZE[351]</value>
+	</variable>
+	<variable name="MyFlixDelayLocalizeVar">
+		<value condition="!IsEmpty(Skin.String(MyFlix.Delay))">$INFO[Skin.String(MyFlix.Delay),, $LOCALIZE[31090]]</value>
 		<value>$LOCALIZE[351]</value>
 	</variable>
 	<variable name="InfoPanelLabel1Var">
@@ -849,6 +860,8 @@
 	<variable name="StudioIconVar">
 		<value condition="!SubString(ListItem.Icon,Default,left) + !Skin.HasSetting(coloredflags)">$INFO[ListItem.Studio,flags/studios/,.png]</value>
 		<value condition="!SubString(ListItem.Icon,Default,left) + Skin.HasSetting(coloredflags)">$INFO[ListItem.Studio,flags/colored/studios/,.png]</value>
+		<value condition="!IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio,flags/studios/,.png]</value>
+		<value condition="!SubString(ListItem.Icon,Default,left)">$INFO[ListItem.Icon]</value>
 		<value>$INFO[ListItem.Icon,views/list/]</value>
 	</variable>
 	<variable name="StarRatingDiffuseVar">
